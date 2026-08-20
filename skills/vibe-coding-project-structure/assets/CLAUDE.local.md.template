@@ -1,0 +1,20 @@
+# Personal notes (not committed)
+
+Personal additions to `CLAUDE.md` that aren't team consensus yet, or that
+are specific to your machine/setup rather than the project. Gitignored —
+never expected to be committed.
+
+Examples of what belongs here:
+
+- A local port/URL override ("I run the dev server on :3001, not :3000,
+  because :3000 is taken by another project on my machine").
+- A convention you personally prefer but haven't proposed to the team yet.
+- A reminder to yourself about something you're mid-way through that isn't
+  ready to be documented as settled project knowledge.
+- Credentials-adjacent notes that are real but shouldn't be in git (not the
+  credentials themselves — those belong in an env file or secret manager,
+  never in a markdown file).
+
+Delete anything here once it becomes real team consensus — promote it into
+`CLAUDE.md` (or `CONTEXT.md`, `.claude/rules/`) instead of letting this file
+grow into a second, private CLAUDE.md.

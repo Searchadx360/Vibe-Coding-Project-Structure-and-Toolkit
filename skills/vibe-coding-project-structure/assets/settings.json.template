@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "PreToolUse": [],
+    "PostToolUse": [],
+    "UserPromptSubmit": [
+      {
+        "command": "node .claude/hooks/skill-eval.js"
+      }
+    ],
+    "Stop": []
+  }
+}

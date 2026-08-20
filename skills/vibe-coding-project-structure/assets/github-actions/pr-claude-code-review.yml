@@ -1,0 +1,35 @@
+# Reviews every PR against .claude/agents/code-reviewer.md's checklist.
+# Requires: ANTHROPIC_API_KEY repository secret, and a real
+# .claude/agents/code-reviewer.md file (see references/choosing-a-mechanism.md).
+# Rough cost: $0.05-$0.50 per PR. See references/github-actions.md.
+name: Claude Code PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  review:
+    if: >
+      github.event_name == 'pull_request' ||
+      contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Review the diff between origin/main and this branch
+            (`git diff origin/main...HEAD`) against the checklist in
+            .claude/agents/code-reviewer.md. Post findings as a PR review
+            comment. Be specific: file, line, problem, suggested fix.

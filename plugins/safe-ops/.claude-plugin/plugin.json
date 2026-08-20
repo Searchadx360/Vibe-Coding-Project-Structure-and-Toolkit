@@ -1,0 +1,11 @@
+{
+  "name": "safe-ops",
+  "displayName": "Safe Ops",
+  "version": "1.0.0",
+  "description": "Guardrail hooks that block edits to protected branches/paths and audit config changes, plus a rules set for sensitive paths.",
+  "author": { "name": "Vibe Coding Toolkit maintainers" },
+  "homepage": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit/tree/main/plugins/safe-ops",
+  "repository": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit",
+  "license": "MIT",
+  "keywords": ["hooks", "safety", "guardrails"]
+}

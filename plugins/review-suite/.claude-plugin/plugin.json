@@ -1,0 +1,11 @@
+{
+  "name": "review-suite",
+  "displayName": "Review Suite",
+  "version": "1.0.0",
+  "description": "Automated code review agents, a quality-review skill, and a format-on-save hook.",
+  "author": { "name": "Vibe Coding Toolkit maintainers" },
+  "homepage": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit/tree/main/plugins/review-suite",
+  "repository": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit",
+  "license": "MIT",
+  "keywords": ["review", "security", "hooks", "quality"]
+}

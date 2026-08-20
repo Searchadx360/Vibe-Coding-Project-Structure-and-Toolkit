@@ -1,0 +1,11 @@
+{
+  "name": "mcp-connectors",
+  "displayName": "MCP Connectors Starter",
+  "version": "1.0.0",
+  "description": "A starter bundle of commonly used MCP server configs. Comment out any you don't need before enabling.",
+  "author": { "name": "Vibe Coding Toolkit maintainers" },
+  "homepage": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit/tree/main/plugins/mcp-connectors",
+  "repository": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit",
+  "license": "MIT",
+  "keywords": ["mcp", "integrations"]
+}

@@ -1,0 +1,11 @@
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# Personal Claude Code overrides (relevant if you dogfood the flagship
+# skill's bootstrap script against this repo itself)
+.claude/settings.local.json
+CLAUDE.local.md
+
+# examples/js-project-starter is a real Node project — see its own
+# .gitignore for node_modules/, build output, etc.

@@ -1,0 +1,24 @@
+# Context
+
+This file is the human-authored narrative — why this project exists, in
+plain words. `CLAUDE.md` stays the terse operating spec; this is where the
+"why" lives so it doesn't crowd that file out.
+
+## Why this project exists
+
+<What problem prompted building this? Who asked for it, or what gap does
+it close?>
+
+## Background worth knowing
+
+<Anything a new contributor — human or AI — would benefit from knowing
+that isn't captured by reading the code: prior attempts that didn't work,
+constraints that came from outside the codebase (a compliance requirement,
+a deadline, a stakeholder ask), decisions that look odd without the story
+behind them.>
+
+## Non-goals
+
+<What this project deliberately does NOT try to do, and why — saves
+someone from "helpfully" adding scope that was already considered and
+rejected.>

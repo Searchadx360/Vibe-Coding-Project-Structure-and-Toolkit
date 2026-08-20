@@ -1,0 +1,33 @@
+# CLAUDE.md
+
+## Project overview
+<!-- One paragraph: what this repo is, who it's for, and its current stage
+     (prototype / production / maintenance). -->
+
+## Tech stack
+<!-- Language, framework, package manager, database. Be specific about
+     versions where it matters (e.g. "React 19, not 18"). -->
+
+## Commands
+| Task | Command |
+| --- | --- |
+| Install | `pnpm install` |
+| Dev server | `pnpm dev` |
+| Test | `pnpm test` |
+| Lint | `pnpm lint` |
+| Build | `pnpm build` |
+
+## Conventions
+<!-- Naming, folder structure, error-handling pattern, state-management
+     approach — whatever a new contributor would otherwise have to guess. -->
+
+## Testing
+<!-- Where tests live, what must be covered before a PR is mergeable. -->
+
+## Rules
+@.claude/rules/security.md
+<!-- Import additional path-scoped rule files with @path/to/file.md -->
+
+## Do not
+<!-- The shortlist of things that have gone wrong before: files never to
+     touch, patterns never to reintroduce, migrations never to edit in place. -->

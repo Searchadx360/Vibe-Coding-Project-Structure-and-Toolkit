@@ -1,0 +1,30 @@
+# Weekly review of code that never went through a PR-triggered review
+# (older files, direct commits). Requires: ANTHROPIC_API_KEY repository secret.
+# Rough cost: $1.00-$5.00/week. See references/github-actions.md.
+name: Claude Code Quality Sweep
+
+on:
+  schedule:
+    - cron: "0 6 * * 0" # 06:00 UTC every Sunday
+  workflow_dispatch: {}
+
+jobs:
+  quality-sweep:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sweep a sample of the codebase for quality issues
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Pick 3-5 directories at random that don't look like they've had
+            a recent PR review (check git log for low-activity, high-age
+            files). Review them against .claude/agents/code-reviewer.md's
+            checklist and .claude/rules/. Open one issue per directory with
+            concrete findings — file, line, problem, suggested fix. Do not
+            edit files directly.

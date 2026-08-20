@@ -1,0 +1,24 @@
+{
+  "_comment": "Copy this to .claude/hooks/skill-rules.json and replace with your real skills. One entry per skill folder name under .claude/skills/. See references/skill-eval-hook.md for the scoring rules.",
+
+  "example-testing-patterns": {
+    "description": "Testing conventions and TDD workflow for this project",
+    "priority": 9,
+    "triggers": {
+      "keywords": ["test", "jest", "spec", "tdd", "mock"],
+      "keywordPatterns": ["\\btest(?:s|ing)?\\b"],
+      "pathPatterns": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts"],
+      "intentPatterns": ["(?:write|add|create|fix).*(?:test|spec)"]
+    },
+    "excludePatterns": ["e2e", "playwright", "maestro"]
+  },
+
+  "example-api-conventions": {
+    "description": "API route and schema conventions for this project",
+    "priority": 7,
+    "triggers": {
+      "keywords": ["endpoint", "route", "api", "schema", "handler"],
+      "pathPatterns": ["**/api/**", "**/routes/**"]
+    }
+  }
+}

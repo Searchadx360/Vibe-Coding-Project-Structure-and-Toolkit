@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notes — Claude Code Projects</title>
+<meta name="description" content="A running devlog of changes to the vibe-coding-toolkit catalog and this index site." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">~/claude-projects<span>/</span></div>
+    <nav class="topnav">
+      <a href="index.html">index</a>
+      <a href="workspaces.html">workspaces</a>
+      <a href="marketplace.html">marketplace</a>
+      <a href="docs.html">docs</a>
+      <a href="notes.html" aria-current="page">notes</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="eyebrow"># ~/claude-projects/notes/README.md</p>
+    <h1>Notes</h1>
+    <p>
+      A running log of changes to the toolkit and this site — what got
+      added, what changed shape, and why. Replace these with your own
+      entries as the catalog grows; this is the format to follow.
+    </p>
+  </div>
+</header>
+
+<main class="content">
+  <div class="wrap">
+
+    <div class="note-entry">
+      <span class="note-date">2026-08-21</span>
+      <h3>Site launch</h3>
+      <p>
+        First version of this index: 7 categories, 28 cataloged entries,
+        all sourced from <code>vibe-coding-toolkit</code>. Search filters
+        by title, description, tag, and category in real time — no backend,
+        just a static <code>data/projects.js</code> array.
+      </p>
+    </div>
+
+    <div class="note-entry">
+      <span class="note-date">2026-08-21</span>
+      <h3>js-project-starter added</h3>
+      <p>
+        A complete, copy-paste Claude Code workspace for a JS/TS repo landed
+        in <code>examples/</code> — memory, two skills, a subagent, a
+        ticket-to-PR command, four hooks, an MCP config, and three GitHub
+        Actions workflows, wired against a small real app rather than
+        placeholder files.
+      </p>
+    </div>
+
+    <div class="note-entry">
+      <span class="note-date">2026-08-21</span>
+      <h3>Four plugin bundles published</h3>
+      <p>
+        <code>review-suite</code>, <code>growth-ops</code>,
+        <code>safe-ops</code>, and <code>mcp-connectors</code> published to
+        the toolkit's own marketplace. <code>growth-ops</code> is the
+        catalog's domain-expert example — a growth-analyst subagent plus
+        campaign-brief and ad-copy-compliance skills, for anyone adapting
+        this toolkit to a non-engineering domain.
+      </p>
+    </div>
+
+    <hr style="border:none;border-top:1px solid var(--panel-border);margin:40px 0;" />
+    <p class="muted">
+      Adding your own entries: keep the newest at the top, one
+      <code>.note-entry</code> per change, and link back to the actual
+      file or folder that changed rather than describing it in the abstract.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>vibe-coding-toolkit &middot; source of truth for this page</span>
+    <span><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">code.claude.com/docs</a></span>
+  </div>
+</footer>
+</body>
+</html>

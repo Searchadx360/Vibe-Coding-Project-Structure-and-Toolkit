@@ -1,0 +1,36 @@
+# <Project name>
+
+## What this is
+
+<One or two sentences: what the project does and who it's for.>
+
+## Stack
+
+- Language/runtime: <e.g. TypeScript, Node 20>
+- Framework: <e.g. Next.js 14, App Router>
+- Database: <e.g. Postgres via Prisma>
+- Package manager: <e.g. pnpm>
+
+## Key commands
+
+- Install: `<command>`
+- Dev server: `<command>`
+- Run tests: `<command>`
+- Lint / format: `<command>`
+- Build: `<command>`
+
+## Architecture notes
+
+<Point at the load-bearing structure, not a full tour.>
+
+## Testing expectations
+
+<What "done" means for a change.>
+
+## Style and conventions
+
+<Only things not already enforced by a linter/formatter.>
+
+## Things to avoid
+
+<Concrete, project-specific gotchas.>

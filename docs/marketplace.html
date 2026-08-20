@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Plugins marketplace — Claude Code Projects</title>
+<meta name="description" content="How Claude Code plugin marketplaces work, and the four plugin bundles published in the vibe-coding-toolkit marketplace." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">~/claude-projects<span>/</span></div>
+    <nav class="topnav">
+      <a href="index.html">index</a>
+      <a href="workspaces.html">workspaces</a>
+      <a href="marketplace.html" aria-current="page">marketplace</a>
+      <a href="docs.html">docs</a>
+      <a href="notes.html">notes</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="eyebrow"># ~/claude-projects/marketplace/README.md</p>
+    <h1>Plugins marketplace</h1>
+    <p>
+      A <a href="https://code.claude.com/docs/en/plugin-marketplaces" target="_blank" rel="noopener">plugin marketplace</a>
+      is just a <code>marketplace.json</code> file listing plugins and where
+      to fetch them — git repos, npm packages, or local paths. Add one,
+      install what you want, get updates when the source changes. The
+      <code>vibe-coding-toolkit</code> repo is one such marketplace.
+    </p>
+  </div>
+</header>
+
+<main class="content">
+  <div class="wrap">
+
+    <h2># add this marketplace</h2>
+    <pre class="mono" style="background:var(--panel);border:1px solid var(--panel-border);border-radius:6px;padding:16px;overflow-x:auto;">/plugin marketplace add Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit</pre>
+
+    <h2># bundles</h2>
+    <table class="doc-table">
+      <thead><tr><th>Plugin</th><th class="desc">What it bundles</th><th>Install</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>review-suite</td>
+          <td class="desc">code-reviewer + security-auditor agents, quality-review skill, format-on-save hook</td>
+          <td><code>/plugin install review-suite@vibe-coding-toolkit</code></td>
+        </tr>
+        <tr>
+          <td>growth-ops</td>
+          <td class="desc">growth-analyst agent, campaign-brief + ad-copy-compliance skills — a domain-expert bundle example</td>
+          <td><code>/plugin install growth-ops@vibe-coding-toolkit</code></td>
+        </tr>
+        <tr>
+          <td>safe-ops</td>
+          <td class="desc">Hooks blocking edits on protected branches/paths, plus a config-change audit log</td>
+          <td><code>/plugin install safe-ops@vibe-coding-toolkit</code></td>
+        </tr>
+        <tr>
+          <td>mcp-connectors</td>
+          <td class="desc">A starter .mcp.json — GitHub, Postgres, filesystem, each behind an env var</td>
+          <td><code>/plugin install mcp-connectors@vibe-coding-toolkit</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2># why bundle instead of copy-paste</h2>
+    <p>
+      Anything in the toolkit's <code>agents/</code>, <code>skills/</code>,
+      <code>commands/</code>, or <code>hooks/</code> folders can be copied
+      straight into a project's <code>.claude/</code> directory — no
+      marketplace needed. Installing as a plugin instead buys you three
+      things: one command to add it to a new project, automatic updates
+      when the bundle changes upstream, and namespacing (<code>review-suite:code-reviewer</code>)
+      so two plugins can ship an agent with the same name without colliding.
+    </p>
+
+    <h2># official docs</h2>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/discover-plugins" target="_blank" rel="noopener">Discover and install plugins</a></li>
+      <li><a href="https://code.claude.com/docs/en/plugins" target="_blank" rel="noopener">Create plugins</a></li>
+      <li><a href="https://code.claude.com/docs/en/plugin-marketplaces" target="_blank" rel="noopener">Create and distribute a marketplace</a></li>
+      <li><a href="https://code.claude.com/docs/en/plugins-reference" target="_blank" rel="noopener">Plugins reference (full schema)</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>vibe-coding-toolkit &middot; source of truth for this page</span>
+    <span><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">code.claude.com/docs</a></span>
+  </div>
+</footer>
+</body>
+</html>

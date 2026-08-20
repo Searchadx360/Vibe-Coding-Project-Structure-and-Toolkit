@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What's a Claude Code project workspace? — Claude Code Projects</title>
+<meta name="description" content="What a Claude Code project workspace is: the .claude/ directory, CLAUDE.md, skills, agents, hooks, rules, MCP servers, and plugins, and how they compose." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">~/claude-projects<span>/</span></div>
+    <nav class="topnav">
+      <a href="index.html">index</a>
+      <a href="workspaces.html" aria-current="page">workspaces</a>
+      <a href="marketplace.html">marketplace</a>
+      <a href="docs.html">docs</a>
+      <a href="notes.html">notes</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <p class="eyebrow"># ~/claude-projects/workspaces/README.md</p>
+    <h1>What's a Claude Code project workspace?</h1>
+    <p>
+      A workspace is everything under a project's <code>.claude/</code>
+      directory plus its <code>CLAUDE.md</code> — the configuration that
+      turns a generic Claude Code session into one that already knows your
+      stack, your conventions, and the exact things it should never do.
+    </p>
+  </div>
+</header>
+
+<main class="content">
+  <div class="wrap">
+
+    <h2># the pieces</h2>
+    <p class="muted">A workspace is a composition of these — most projects use a handful, not all of them.</p>
+    <table class="doc-table">
+      <thead><tr><th>Piece</th><th class="desc">What it's for</th><th>Lives at</th></tr></thead>
+      <tbody>
+        <tr><td>Memory</td><td class="desc">Static project facts and conventions Claude reads every session.</td><td><code>CLAUDE.md</code></td></tr>
+        <tr><td>Rules</td><td class="desc">Path-scoped instructions that only load when Claude touches matching files.</td><td><code>.claude/rules/*.md</code></td></tr>
+        <tr><td>Skills</td><td class="desc">Reusable procedures — reference knowledge or a runnable task — invoked as <code>/name</code> or automatically.</td><td><code>.claude/skills/&lt;name&gt;/SKILL.md</code></td></tr>
+        <tr><td>Commands</td><td class="desc">Flat-file skills for simple, single-purpose slash commands.</td><td><code>.claude/commands/*.md</code></td></tr>
+        <tr><td>Agents</td><td class="desc">Subagents with their own model, tools, and system prompt — isolated context for a specific job.</td><td><code>.claude/agents/*.md</code></td></tr>
+        <tr><td>Hooks</td><td class="desc">Shell commands (or HTTP/MCP/LLM calls) that fire on lifecycle events — format on save, block a risky edit, and so on.</td><td><code>.claude/settings.json</code> (<code>hooks</code> key)</td></tr>
+        <tr><td>MCP servers</td><td class="desc">Connections to external tools and data — issue trackers, databases, internal APIs.</td><td><code>.mcp.json</code></td></tr>
+        <tr><td>Plugins</td><td class="desc">Any of the above, bundled and versioned for one-command install across projects.</td><td><code>/plugin install</code></td></tr>
+      </tbody>
+    </table>
+
+    <h2># how they compose</h2>
+    <p>
+      Settings resolve across scopes — <strong>user</strong> (all your
+      projects), <strong>project</strong> (checked in, shared with your
+      team), and <strong>local</strong> (gitignored, just you) — with
+      project and local layered on top of user. A workspace you commit to a
+      repo is what every collaborator gets the moment they clone it and
+      accept the workspace trust prompt; nothing needs installing beyond
+      Claude Code itself.
+    </p>
+    <p>
+      Skills and rules only cost context when they're actually relevant —
+      a rule scoped to <code>src/auth/**</code> never loads while you're
+      editing the README. Hooks run deterministically regardless of what
+      the model decides, which is why the one rule you can't afford to have
+      forgotten (no edits on <code>main</code>) belongs in a hook, not a
+      line in <code>CLAUDE.md</code> hoping the model remembers.
+    </p>
+
+    <h2># see it end to end</h2>
+    <p>
+      <a href="https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit/tree/main/examples/js-project-starter" target="_blank" rel="noopener">examples/js-project-starter</a>
+      in the toolkit repo is a complete workspace wired against a real (small)
+      app: memory, two skills, one subagent, one command, four hooks, an MCP
+      config, and three GitHub Actions workflows, all cross-referenced so you
+      can see exactly why each piece is there.
+    </p>
+
+    <h2># official docs</h2>
+    <ul>
+      <li><a href="https://code.claude.com/docs/en/memory" target="_blank" rel="noopener">Memory (CLAUDE.md and rules)</a></li>
+      <li><a href="https://code.claude.com/docs/en/skills" target="_blank" rel="noopener">Skills</a></li>
+      <li><a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Subagents</a></li>
+      <li><a href="https://code.claude.com/docs/en/hooks" target="_blank" rel="noopener">Hooks</a></li>
+      <li><a href="https://code.claude.com/docs/en/mcp" target="_blank" rel="noopener">MCP</a></li>
+      <li><a href="https://code.claude.com/docs/en/settings" target="_blank" rel="noopener">Settings &amp; scopes</a></li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>vibe-coding-toolkit &middot; source of truth for this page</span>
+    <span><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">code.claude.com/docs</a></span>
+  </div>
+</footer>
+</body>
+</html>

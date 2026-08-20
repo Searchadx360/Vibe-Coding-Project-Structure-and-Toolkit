@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Claude Code Projects — an index of workspaces, plugins &amp; templates</title>
+<meta name="description" content="A browsable index of Claude Code project workspaces: plugins, agents, skills, hooks, templates, and example setups, grouped by what you're actually trying to do." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">~/claude-projects<span>/</span></div>
+    <nav class="topnav">
+      <a href="index.html" aria-current="page">index</a>
+      <a href="workspaces.html">workspaces</a>
+      <a href="marketplace.html">marketplace</a>
+      <a href="docs.html">docs</a>
+      <a href="notes.html">notes</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">~/claude-projects $ ls -la<span class="cursor" aria-hidden="true"></span></p>
+    <h1>Every Claude Code workspace we've built, in one place.</h1>
+    <p class="lede">
+      An index of plugins, agents, skills, hooks, templates, and full example
+      setups for <a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">Claude Code</a>,
+      organized by what you're trying to get done — not by which repo happened
+      to hold the file.
+    </p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#catalog">Browse the index</a>
+      <a class="btn" href="workspaces.html">What's a Claude Code workspace?</a>
+      <a class="btn" href="marketplace.html">Plugins marketplace</a>
+    </div>
+
+    <div class="searchbar">
+      <span class="prompt-glyph">&gt;_</span>
+      <input id="search-input" type="text" placeholder="filter by keyword — try “hook”, “review”, “schema”…" autocomplete="off" />
+      <span id="search-count" class="search-count"></span>
+    </div>
+  </div>
+</header>
+
+<section class="explainer">
+  <div class="wrap">
+    <h2># about this index</h2>
+    <p>
+      Every entry below points at a real file or folder in the
+      <code>vibe-coding-toolkit</code> repository — an awesome-list-style
+      catalog that's also a working <a href="https://code.claude.com/docs/en/plugins" target="_blank" rel="noopener">Claude Code plugin marketplace</a>.
+      Nothing here is fetched live; this page is a static snapshot, so it
+      loads instantly and works on any static host.
+    </p>
+    <div class="grid-3">
+      <div class="stat-card"><span class="num" id="stat-projects">—</span><span class="label">indexed projects</span></div>
+      <div class="stat-card"><span class="num" id="stat-categories">—</span><span class="label">categories</span></div>
+      <div class="stat-card"><span class="num">4</span><span class="label">installable plugin bundles</span></div>
+    </div>
+  </div>
+</section>
+
+<main class="catalog" id="catalog">
+  <div class="wrap" id="catalog-root">
+    <!-- rendered by assets/main.js from data/projects.js -->
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>vibe-coding-toolkit &middot; source of truth for this page</span>
+    <span><a href="https://code.claude.com/docs/en/overview" target="_blank" rel="noopener">code.claude.com/docs</a></span>
+  </div>
+</footer>
+
+<script src="data/projects.js"></script>
+<script src="assets/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var d = window.CLAUDE_INDEX || { PROJECTS: [], CATEGORIES: [] };
+    var p = document.getElementById("stat-projects");
+    var c = document.getElementById("stat-categories");
+    if (p) p.textContent = d.PROJECTS.length;
+    if (c) c.textContent = d.CATEGORIES.length;
+  });
+</script>
+</body>
+</html>

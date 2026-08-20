@@ -1,0 +1,39 @@
+{
+  "curated": [
+    {
+      "name": "github",
+      "description": "Issues, PRs, and repo content via the GitHub API.",
+      "install": "npx -y @modelcontextprotocol/server-github",
+      "requiresEnv": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+    },
+    {
+      "name": "postgres",
+      "description": "Read-only schema and query access to a Postgres database.",
+      "install": "npx -y @modelcontextprotocol/server-postgres <connection-string>",
+      "requiresEnv": [],
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/postgres"
+    },
+    {
+      "name": "filesystem",
+      "description": "Scoped filesystem access to directories outside the project root.",
+      "install": "npx -y @modelcontextprotocol/server-filesystem <allowed-dir>",
+      "requiresEnv": [],
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem"
+    },
+    {
+      "name": "slack",
+      "description": "Read/post to Slack channels — useful for a notification hook or a support-triage workflow.",
+      "install": "npx -y @modelcontextprotocol/server-slack",
+      "requiresEnv": ["SLACK_BOT_TOKEN", "SLACK_TEAM_ID"],
+      "docs": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
+    },
+    {
+      "name": "linear",
+      "description": "Issue tracker integration used by the ticket-to-pr command/example.",
+      "install": "npx -y mcp-remote https://mcp.linear.app/sse",
+      "requiresEnv": [],
+      "docs": "https://linear.app/docs/mcp"
+    }
+  ]
+}

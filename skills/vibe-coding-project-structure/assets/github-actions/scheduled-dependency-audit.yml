@@ -1,0 +1,31 @@
+# Biweekly dependency update check, verified by the test suite before a PR
+# is opened. Requires: ANTHROPIC_API_KEY repository secret.
+# Rough cost: $0.20-$1.00/cycle. See references/github-actions.md.
+name: Claude Code Dependency Audit
+
+on:
+  schedule:
+    - cron: "0 6 1,15 * *" # 06:00 UTC on the 1st and 15th of every month
+  workflow_dispatch: {}
+
+jobs:
+  dependency-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit and propose safe dependency updates
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Check for outdated or vulnerable dependencies (npm audit,
+            or the equivalent for this project's package manager - see
+            CLAUDE.md for which one). For safe, low-risk updates: bump the
+            dependency, run the full test suite, and only open a PR if
+            tests pass. For anything risky (major version bump, breaking
+            changelog entries) open an issue instead of a PR, describing
+            the risk instead of applying it.

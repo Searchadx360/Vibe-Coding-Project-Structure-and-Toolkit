@@ -1,0 +1,31 @@
+# Monthly check for documentation that's drifted from the code.
+# Requires: ANTHROPIC_API_KEY repository secret.
+# Rough cost: $0.50-$2.00/month. See references/github-actions.md.
+name: Claude Code Docs Sync
+
+on:
+  schedule:
+    - cron: "0 6 1 * *" # 06:00 UTC on the 1st of every month
+  workflow_dispatch: {}
+
+jobs:
+  docs-sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check docs against last month's commits
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            Look at commits from the last 30 days (`git log --since="30 days ago"`).
+            Compare what changed against README.md, CLAUDE.md, and any
+            docs/ content. Open an issue listing specific documentation
+            that's now inaccurate or missing, with the commit(s) responsible.
+            Don't edit files directly — file an issue for a human to action.

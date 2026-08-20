@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "vibe-coding-toolkit",
+  "owner": {
+    "name": "Vibe Coding Toolkit maintainers",
+    "url": "https://github.com/Searchadx360/Vibe-Coding-Project-Structure-and-Toolkit"
+  },
+  "description": "A curated marketplace of Claude Code agents, skills, commands, hooks, rules, MCP configs, and workflow bundles.",
+  "version": "1.0.0",
+  "metadata": {
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "review-suite",
+      "source": "review-suite",
+      "description": "Automated code review: a code-reviewer and security-auditor subagent, a quality-review skill, and a post-edit lint/format hook.",
+      "version": "1.0.0",
+      "category": "code-review",
+      "keywords": ["review", "security", "quality", "hooks", "agents"],
+      "author": { "name": "Vibe Coding Toolkit maintainers" }
+    },
+    {
+      "name": "growth-ops",
+      "source": "growth-ops",
+      "description": "Domain-expert bundle for marketers: a growth-analyst subagent plus skills for campaign briefs and ad-copy compliance review.",
+      "version": "1.0.0",
+      "category": "domain-experts",
+      "keywords": ["marketing", "growth", "ads", "compliance", "arbitrage"],
+      "author": { "name": "Vibe Coding Toolkit maintainers" }
+    },
+    {
+      "name": "safe-ops",
+      "source": "safe-ops",
+      "description": "Safety rails: hooks that block edits to protected branches and files, plus an auditable rules set for sensitive paths.",
+      "version": "1.0.0",
+      "category": "safety",
+      "keywords": ["hooks", "guardrails", "protected-branch", "rules"],
+      "author": { "name": "Vibe Coding Toolkit maintainers" }
+    },
+    {
+      "name": "mcp-connectors",
+      "source": "mcp-connectors",
+      "description": "A starter bundle of commonly used MCP server configs (GitHub, Postgres, filesystem, Slack) you can enable individually.",
+      "version": "1.0.0",
+      "category": "mcp",
+      "keywords": ["mcp", "github", "postgres", "integrations"],
+      "author": { "name": "Vibe Coding Toolkit maintainers" }
+    }
+  ]
+}
